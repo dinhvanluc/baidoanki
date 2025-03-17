@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-10 bg-gray-100">
+    <h1 class="text-2xl font-bold mb-4">Giỏ hàng của bạn</h1>
+
+    <div id="cart-items" class="bg-white p-4 rounded shadow-md"></div>
+
+    <h2 class="text-xl font-bold mt-4">Tổng tiền: <span id="total-price">0</span> $</h2>
+
+    <button id="clear-cart" class="bg-red-500 text-white px-4 py-2 rounded mt-4">Xóa toàn bộ giỏ hàng</button>
+    <button id="checkout-btn" class="bg-green-500 text-white px-4 py-2 rounded mt-4 ml-2">Mua hàng</button>
+
+    <a href="index.html" class="text-blue-500 block mt-4">⬅ Quay lại mua hàng</a>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartContainer = document.getElementById("cart-items");
+            let totalPrice = 0;
+
+            cartContainer.innerHTML = "";
+            cart.forEach((item, index) => {
+                let itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+
+                cartContainer.innerHTML += `
+                    <div class="flex justify-between items-center border p-2 my-2">
+                        <div>
+                            <p class="font-bold">${item.name} - $${item.price.toFixed(2)}</p>
+                            <p>Số lượng: 
+                                <button onclick="updateQuantity(${index}, -1)" class="bg-gray-200 px-2">-</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="updateQuantity(${index}, 1)" class="bg-gray-200 px-2">+</button>
+                            </p>
+                        </div>
+                        <button onclick="removeItem(${index})" class="bg-red-500 text-white px-2 py-1 rounded">Xóa</button>
+                    </div>
+                `;
+            });
+
+            document.getElementById("total-price").innerText = totalPrice.toFixed(2);
+        }
+
+        function updateQuantity(index, change) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        document.getElementById("clear-cart").addEventListener("click", function () {
+            localStorage.removeItem("cart");
+            loadCart();
+        });
+
+        document.getElementById("checkout-btn").addEventListener("click", function () {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cart.length === 0) {
+                alert("Giỏ hàng trống, hãy thêm sản phẩm!");
+                return;
+            }
+            window.location.href = "checkout.html";
+        });
+
+        loadCart();
+    </script>
+</body>
+
+</html>
