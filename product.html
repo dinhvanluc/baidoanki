@@ -67,12 +67,18 @@
         <div class="nav-icon">
             <a href=""><i class="bx bx-search"></i></a>
             <a href=""><i class="bx bx-user"></i></a>
-            <div class="cart-container">
-                <a href="cart.html">
-                    <img src="images/incon-shopping-cart.png" alt="Giỏ hàng">
+            <div class="relative inline-block">
+                <a href="cart.html" class="group">
+                    <img src="images/incon-shopping-cart.png" alt="Giỏ hàng"
+                        class="w-10 h-10 transition duration-300 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:hue-rotate-[-50deg]">
+                    <span id="cart-count"
+                        class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full hidden">
+                        0
+                    </span>
                 </a>
-
             </div>
+
+        </div>
 
 
         </div>
@@ -264,6 +270,8 @@
             </div>
         </section>
 
+
+
         <!-- client review section -->
 
         <!-- contact section -->
@@ -312,6 +320,24 @@
             <p>Copyright © 2023 by Que Jewelry</p>
         </div>
         <script src="java.js"></script>
+
+        <script>
+            function updateCartCount() {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+                let cartCount = document.getElementById("cart-count");
+
+                if (totalQuantity > 0) {
+                    cartCount.innerText = totalQuantity;
+                    cartCount.classList.remove("hidden"); // Hiện số lượng nếu > 0
+                } else {
+                    cartCount.classList.add("hidden"); // Ẩn nếu giỏ hàng trống
+                }
+            }
+
+            // Cập nhật số lượng ngay khi trang load
+            document.addEventListener("DOMContentLoaded", updateCartCount);
+        </script>
 
     </body>
 

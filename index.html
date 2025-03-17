@@ -71,12 +71,24 @@
             <a href=""><i class="bx bx-search"></i></a>
             <a href=""><i class="bx bx-user"></i></a>
             <div class="cart-container">
-                <a href="cart.html">
-                    <img src="images/incon-shopping-cart.png" alt="Giỏ hàng">
+
+
+                <!-- Icon giỏ hàng -->
+                <a href="cart.html" class="relative group">
+                    <img src="images/incon-shopping-cart.png" alt="Giỏ hàng"
+                        class="w-10 transition duration-300 group-hover:filter group-hover:brightness-0 group-hover:hue-rotate-180">
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                        0
+                    </span>
                 </a>
 
-            </div>
+                </a>
 
+                </a>
+            </div>
+        </div>
+        <div class="bx bx-menu" id="menu-icon"></div>
 
         </div>
         <script>
@@ -86,6 +98,8 @@
                 document.getElementById("cart-count").innerText = totalItems;
             });
         </script>
+
+
 
     </header>
 
@@ -145,6 +159,24 @@
                 </a>
             </div>
         </section>
+        <script>
+            function updateCartCount() {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+                let cartCount = document.getElementById("cart-count");
+
+                if (totalQuantity > 0) {
+                    cartCount.innerText = totalQuantity;
+                    cartCount.classList.remove("hidden"); // Hiện số lượng nếu > 0
+                } else {
+                    cartCount.classList.add("hidden"); // Ẩn nếu giỏ hàng trống
+                }
+            }
+
+            // Cập nhật số lượng ngay khi trang load
+            document.addEventListener("DOMContentLoaded", updateCartCount);
+        </script>
+
 
     </body>
 
@@ -199,6 +231,7 @@
                     vel magni. Vel, modi fugit!</p>
                 <h6>Continue Reading...</h6>
             </div>
+
         </div>
     </section>
     <!-- contact section -->
