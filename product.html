@@ -67,17 +67,8 @@
         <div class="nav-icon">
             <a href=""><i class="bx bx-search"></i></a>
             <a href=""><i class="bx bx-user"></i></a>
-            <div class="relative inline-block">
-                <a href="cart.html" class="group">
-                    <img src="images/incon-shopping-cart.png" alt="Giỏ hàng"
-                        class="w-10 h-10 transition duration-300 group-hover:brightness-0 group-hover:invert group-hover:sepia group-hover:hue-rotate-[-50deg]">
-                    <span id="cart-count"
-                        class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full hidden">
-                        0
-                    </span>
-                </a>
-            </div>
-
+            <a href="cart.html"><i class="bx bx-cart"></i></a>
+            <span id="cart-count" class="cart-badge">0</span>
         </div>
 
 
@@ -162,7 +153,110 @@
                     // Dữ liệu mẫu
                     const products = {
                         1: { name: "Diamond Ring", price: 99.99, image: "ring.jpg" },
-                        2: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" }
+                        2: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        3: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        4: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        5: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        6: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        7: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        8: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        9: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        10: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        11: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        12: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        13: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        14: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        15: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        16: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        17: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        18: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        19: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        20: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        21: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        22: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        23: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        24: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        25: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        26: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        27: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        28: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        29: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        30: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        31: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        32: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        32: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        32: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        33: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        34: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        35: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        36: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        37: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        38: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        39: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        40: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        41: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        42: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        44: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        43: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        45: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        46: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        47: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        48: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        49: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        50: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        51: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        52: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        53: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        54: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        55: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        56: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        57: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        58: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        59: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        60: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        61: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        62: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        63: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        64: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        65: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        66: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        76: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        68: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        67: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        69: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        70: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        71: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        72: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        73: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        73: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        75: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        76: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        77: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        78: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        79: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        80: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        81: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        82: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        83: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        84: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        85: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        86: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        87: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        88: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        88: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        89: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        90: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        91: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        92: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        93: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        94: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        95: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        96: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        97: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        98: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        99: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+                        100: { name: "Gold Necklace", price: 199.99, image: "necklace.jpg" },
+
                     };
 
                     if (productId && products[productId]) {

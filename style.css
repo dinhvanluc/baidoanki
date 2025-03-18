@@ -594,3 +594,19 @@ input:focus {
     color: purple;
     font-weight: bold;
 }
+
+.cart-badge {
+    position: absolute;
+    top: 15px;
+    /* Đẩy số lượng lên trên */
+    right: 350px;
+    /* Đẩy số lượng sang phải */
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    min-width: 20px;
+    text-align: center;
+}

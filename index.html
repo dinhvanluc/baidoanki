@@ -70,23 +70,9 @@
         <div class="nav-icon">
             <a href=""><i class="bx bx-search"></i></a>
             <a href=""><i class="bx bx-user"></i></a>
-            <div class="cart-container">
+            <a href="cart.html"><i class="bx bx-cart"></i></a>
 
-
-                <!-- Icon giỏ hàng -->
-                <a href="cart.html" class="relative group">
-                    <img src="images/incon-shopping-cart.png" alt="Giỏ hàng"
-                        class="w-10 transition duration-300 group-hover:filter group-hover:brightness-0 group-hover:hue-rotate-180">
-                    <span id="cart-count"
-                        class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                        0
-                    </span>
-                </a>
-
-                </a>
-
-                </a>
-            </div>
+        </div>
         </div>
         <div class="bx bx-menu" id="menu-icon"></div>
 
@@ -176,6 +162,22 @@
             // Cập nhật số lượng ngay khi trang load
             document.addEventListener("DOMContentLoaded", updateCartCount);
         </script>
+        <script>
+            function updateCartCount() {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let cartCount = cart.reduce((total, item) => total + item.quantity, 0); // Tính tổng số lượng sản phẩm
+
+                let cartBadge = document.getElementById("cart-count");
+                if (cartBadge) {
+                    cartBadge.innerText = cartCount;
+                    cartBadge.style.display = cartCount > 0 ? "block" : "none"; // Ẩn nếu không có sản phẩm
+                }
+            }
+
+            // Gọi hàm ngay khi load trang
+            document.addEventListener("DOMContentLoaded", updateCartCount);
+        </script>
+
 
 
     </body>
@@ -203,32 +205,32 @@
         <div class="update-cart">
             <div class="cart">
                 <img src="images/bl-1.png" alt="">
-                <h5>26 Jan 2022</h5>
+                <h5>26 Jan 2025</h5>
                 <h4>Let's start bring sale on this summer vacation</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolorem alias, provident
-                    repellendus, impedit ipsam aliquid vitae eaque incidunt est quibusdam quae laborum nemo
-                    mollitia,
-                    vel magni. Vel, modi fugit!</p>
+                <p>A silver jewelry set for women will help you express your unique taste and personality perfectly.
+                    From minimalist and elegant designs to sparkling gemstone-adorned pieces, each jewelry set brings a
+                    distinct style. If you're looking for the perfect jewelry set, this article by Rock Paradise will
+                    help you find the right one...</p>
                 <h6>Continue Reading...</h6>
             </div>
             <div class="cart">
                 <img src="images/bl-2.png" alt="">
-                <h5>26 Jan 2022</h5>
+                <h5>26 Jan 2025</h5>
                 <h4>Let's start bring sale on this summer vacation</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolorem alias, provident
-                    repellendus, impedit ipsam aliquid vitae eaque incidunt est quibusdam quae laborum nemo
-                    mollitia,
-                    vel magni. Vel, modi fugit!</p>
+                <p>A silver jewelry set for women will help you express your unique taste and personality perfectly.
+                    From minimalist and elegant designs to sparkling gemstone-adorned pieces, each jewelry set brings a
+                    distinct style. If you're looking for the perfect jewelry set, this article by Rock Paradise will
+                    help you find the right one...</p>
                 <h6>Continue Reading...</h6>
             </div>
             <div class="cart">
                 <img src="images/bl-3.png" alt="">
-                <h5>26 Jan 2022</h5>
+                <h5>26 Jan 2025</h5>
                 <h4>Let's start bring sale on this summer vacation</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolorem alias, provident
-                    repellendus, impedit ipsam aliquid vitae eaque incidunt est quibusdam quae laborum nemo
-                    mollitia,
-                    vel magni. Vel, modi fugit!</p>
+                <p>A silver jewelry set for women will help you express your unique taste and personality perfectly.
+                    From minimalist and elegant designs to sparkling gemstone-adorned pieces, each jewelry set brings a
+                    distinct style. If you're looking for the perfect jewelry set, this article by Rock Paradise will
+                    help you find the right one...</p>
                 <h6>Continue Reading...</h6>
             </div>
 
@@ -241,7 +243,7 @@
             <div class="first-info">
                 <img src="images/Logo.png" alt="">
 
-                <p>3245 Grant Street Longview, <br> TX united kingdom 765378</p>
+                <p>8A Tôn Thất Thuyết <br> Mỹ Đình, Nam Từ Liêm, Hà Nội</p>
                 <p>0123912039123</p>
                 <p>saiasdasduasdh@sdaufhsudh</p>
 
@@ -265,11 +267,9 @@
 
             <div class="third-info">
                 <h4>Shop</h4>
-                <p>Men's Shopping</p>
-                <p>Men's Shopping</p>
-                <p>Men's Shopping</p>
-                <p>Men's Shopping</p>
-                <p>Men's Shopping</p>
+                <p>Jewelry</p>
+                <p>Gemstones</p>
+                <p>Brands</p>
             </div>
 
 
@@ -277,9 +277,21 @@
     </section>
 
     <div class="end-text">
-        <p>Copyright © 2023 by Que Jewelry</p>
+        <p>Copyright © 2025 by Rock Paradise</p>
     </div>
     <script src="java.js"></script>
+    <script>
+        function updateCartCount() {
+            fetch("cart.php")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("cart-count").textContent = data;
+                });
+        }
+
+        // Khi tải trang, cập nhật số lượng giỏ hàng
+        updateCartCount();
+    </script>
 
 </body>
 
