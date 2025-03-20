@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel="stylesheet" href="style1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,27 +65,34 @@
             <a href=""><i class="bx bx-search"></i></a>
             <a href=""><i class="bx bx-user"></i></a>
             <a href="cart.html"><i class="bx bx-cart"></i></a>
-
-
+            <span id="cart-count" class="cart-badge">0</span>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                document.getElementById("cart-count").innerText = totalItems;
+            });
+        </script>
+
     </header>
     <div>
         <img src="images/1.png" alt="">
     </div>
     <div class="container">
         <div class="text-content">
-            <h2>What is the difference between a lab grown and a mined diamond?</h2>
-            <p>Lab grown diamonds are real diamonds. They are the same material as naturally grown diamonds and have
-                identical chemical, physical and optical properties, including hardness, sparkle, and fire. They can
-                possess inclusions just as mined diamonds and should be purchased with the same care and attention to
-                detail – the only difference is where the diamond comes from.</p>
-            <p>Industrial exploration and extraction of naturally occurring diamonds requires large-scale mining
-                operations in often remote locations with specific geology, where large amounts of rock must be
-                processed to yield tiny amounts of diamond. Laboratory processes, on the other hand, can be conducted
-                comparatively hazard-free anywhere in the world but do require significant amounts of electricity. The
-                source of the electricity used is therefore a key component in assessing the environmental impact of
-                growing diamonds in a lab.</p>
+            <h2>Glowing Embers in the Dark</h2>
+            <p>In the midst of darkness, four small glowing objects rest on a reflective surface, radiating an intense
+                orange and red hue. Their molten appearance suggests they have been heated to an extreme temperature,
+                pulsing with warmth and energy. The surrounding darkness enhances their brilliance, making them appear
+                like miniature stars burning on the ground.
+
+                A soft, ethereal glow forms a halo in the background, adding depth to the image. The reflection beneath
+                the embers creates a mesmerizing symmetry, doubling the effect of their radiant heat. The contrast
+                between the deep black surroundings and the fiery glow makes this moment feel almost surreal, as if
+                capturing the essence of heat and light in a single frame.</p>
+
         </div>
         <div class="image-content">
             <img src="images/kcnhan tao 1.webp" alt="Lab Grown Diamonds">
@@ -94,17 +100,18 @@
     </div>
     <div class="container">
         <div class="text-content">
-            <h2>What is the difference between a lab grown and a mined diamond?</h2>
-            <p>Lab grown diamonds are real diamonds. They are the same material as naturally grown diamonds and have
-                identical chemical, physical and optical properties, including hardness, sparkle, and fire. They can
-                possess inclusions just as mined diamonds and should be purchased with the same care and attention to
-                detail – the only difference is where the diamond comes from.</p>
-            <p>Industrial exploration and extraction of naturally occurring diamonds requires large-scale mining
-                operations in often remote locations with specific geology, where large amounts of rock must be
-                processed to yield tiny amounts of diamond. Laboratory processes, on the other hand, can be conducted
-                comparatively hazard-free anywhere in the world but do require significant amounts of electricity. The
-                source of the electricity used is therefore a key component in assessing the environmental impact of
-                growing diamonds in a lab.</p>
+            <h2>Precision in Motion</h2>
+            <p>This close-up image captures the delicate yet intricate mechanism of a record-cutting lathe or turntable
+                stylus in action. The fine needle precisely traces the grooves of a vinyl record, etching or reading the
+                sound embedded in its surface. The metallic components of the machine, with their polished screws and
+                precise engineering, reflect an industrial elegance, showcasing the craftsmanship behind analog music
+                production.
+
+                The blurred background and shallow depth of field emphasize the sharp details of the stylus and its
+                connection to the record, drawing attention to the precision required for sound reproduction. The
+                interplay of light and shadows adds a cinematic feel, evoking nostalgia for the timeless art of vinyl
+                recording and playback.</p>
+
         </div>
         <div class="image-content">
             <img src="images//kc nhan tao 2.webp" alt="Lab Grown Diamonds">
@@ -112,17 +119,17 @@
     </div>
     <div class="container">
         <div class="text-content">
-            <h2>What is the difference between a lab grown and a mined diamond?</h2>
-            <p>Lab grown diamonds are real diamonds. They are the same material as naturally grown diamonds and have
-                identical chemical, physical and optical properties, including hardness, sparkle, and fire. They can
-                possess inclusions just as mined diamonds and should be purchased with the same care and attention to
-                detail – the only difference is where the diamond comes from.</p>
-            <p>Industrial exploration and extraction of naturally occurring diamonds requires large-scale mining
-                operations in often remote locations with specific geology, where large amounts of rock must be
-                processed to yield tiny amounts of diamond. Laboratory processes, on the other hand, can be conducted
-                comparatively hazard-free anywhere in the world but do require significant amounts of electricity. The
-                source of the electricity used is therefore a key component in assessing the environmental impact of
-                growing diamonds in a lab.</p>
+            <h2>A Cascade of Brilliance</h2>
+            <p>Scattered across a reflective black surface, an array of dazzling diamonds catches the light, their
+                meticulously cut facets shimmering with brilliance. The contrast between the dark background and the
+                bright, transparent gemstones enhances their radiance, making them appear almost ethereal.
+
+                A metal scoop in the corner suggests a jeweler’s careful handling, reinforcing the sense of precision
+                and value that these precious stones embody. Each diamond, unique in its cut and clarity, tells a story
+                of transformation—from raw mineral to a symbol of elegance and luxury. The reflections on the glossy
+                surface create a mesmerizing visual effect, amplifying the diamonds' sparkle and making the scene feel
+                opulent and refined.</p>
+
         </div>
         <div class="image-content">
             <img src="images/kc nhan tao 3.webp" alt="Lab Grown Diamonds">

@@ -1111,3 +1111,22 @@ div.contact-links {
     color: purple;
     font-weight: bold;
 }
+
+.cart-badge {
+
+    position: absolute;
+    top: 17px;
+    /* Đẩy số lên trên */
+    right: 195px;
+    /* Đẩy số sang bên phải */
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    /* Bo tròn nền số */
+    line-height: 20px;
+}

@@ -596,17 +596,20 @@ input:focus {
 }
 
 .cart-badge {
+
     position: absolute;
-    top: 15px;
-    /* Đẩy số lượng lên trên */
-    right: 350px;
-    /* Đẩy số lượng sang phải */
+    top: 17px;
+    /* Đẩy số lên trên */
+    right: 195px;
+    /* Đẩy số sang bên phải */
     background-color: red;
     color: white;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 50%;
-    min-width: 20px;
+    width: 20px;
+    height: 20px;
     text-align: center;
+    border-radius: 50%;
+    /* Bo tròn nền số */
+    line-height: 20px;
 }

@@ -71,11 +71,8 @@
             <a href=""><i class="bx bx-search"></i></a>
             <a href=""><i class="bx bx-user"></i></a>
             <a href="cart.html"><i class="bx bx-cart"></i></a>
-
-        </div>
-        </div>
-        <div class="bx bx-menu" id="menu-icon"></div>
-
+            <span id="cart-count" class="cart-badge">0</span>
+            <div class="bx bx-menu" id="menu-icon"></div>
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
@@ -162,22 +159,6 @@
             // Cập nhật số lượng ngay khi trang load
             document.addEventListener("DOMContentLoaded", updateCartCount);
         </script>
-        <script>
-            function updateCartCount() {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
-                let cartCount = cart.reduce((total, item) => total + item.quantity, 0); // Tính tổng số lượng sản phẩm
-
-                let cartBadge = document.getElementById("cart-count");
-                if (cartBadge) {
-                    cartBadge.innerText = cartCount;
-                    cartBadge.style.display = cartCount > 0 ? "block" : "none"; // Ẩn nếu không có sản phẩm
-                }
-            }
-
-            // Gọi hàm ngay khi load trang
-            document.addEventListener("DOMContentLoaded", updateCartCount);
-        </script>
-
 
 
     </body>
@@ -205,7 +186,7 @@
         <div class="update-cart">
             <div class="cart">
                 <img src="images/bl-1.png" alt="">
-                <h5>26 Jan 2025</h5>
+
                 <h4>Let's start bring sale on this summer vacation</h4>
                 <p>A silver jewelry set for women will help you express your unique taste and personality perfectly.
                     From minimalist and elegant designs to sparkling gemstone-adorned pieces, each jewelry set brings a
@@ -215,23 +196,26 @@
             </div>
             <div class="cart">
                 <img src="images/bl-2.png" alt="">
-                <h5>26 Jan 2025</h5>
-                <h4>Let's start bring sale on this summer vacation</h4>
-                <p>A silver jewelry set for women will help you express your unique taste and personality perfectly.
-                    From minimalist and elegant designs to sparkling gemstone-adorned pieces, each jewelry set brings a
-                    distinct style. If you're looking for the perfect jewelry set, this article by Rock Paradise will
-                    help you find the right one...</p>
-                <h6>Continue Reading...</h6>
+
+                <h4>A Warm Moment Together</h4>
+                <p>Two women are sitting on a cozy bed with a soft beige bedsheet and warm-toned pillows. They are
+                    smiling joyfully while playing with two dogs—one with white fur and the other with brown fur. The
+                    room has a minimalist style, with light-colored walls, a small bedside lamp, and a green plant
+                    adding a touch of nature. A coat hangs neatly on the door, enhancing the warm and inviting
+                    atmosphere. Natural light from the window fills the space, making everything feel soft and full of
+                    life.</p>
+
             </div>
             <div class="cart">
                 <img src="images/bl-3.png" alt="">
-                <h5>26 Jan 2025</h5>
-                <h4>Let's start bring sale on this summer vacation</h4>
-                <p>A silver jewelry set for women will help you express your unique taste and personality perfectly.
-                    From minimalist and elegant designs to sparkling gemstone-adorned pieces, each jewelry set brings a
-                    distinct style. If you're looking for the perfect jewelry set, this article by Rock Paradise will
-                    help you find the right one...</p>
-                <h6>Continue Reading...</h6>
+
+                <h4>Embracing the Summer Sun</h4>
+                <p>A young woman with long, flowing hair is enjoying the sunshine on the beach. She wears a white bikini
+                    and a light, floral kimono with delicate fringe details. Her stylish sunglasses add a touch of
+                    elegance and sophistication. A gentle breeze lifts her hair, creating a sense of freedom and
+                    vitality. Behind her, palm trees and golden sand enhance the natural beauty of the scene, perfectly
+                    complementing her relaxed and carefree aura.</p>
+
             </div>
 
         </div>
@@ -280,18 +264,6 @@
         <p>Copyright © 2025 by Rock Paradise</p>
     </div>
     <script src="java.js"></script>
-    <script>
-        function updateCartCount() {
-            fetch("cart.php")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("cart-count").textContent = data;
-                });
-        }
-
-        // Khi tải trang, cập nhật số lượng giỏ hàng
-        updateCartCount();
-    </script>
 
 </body>
 

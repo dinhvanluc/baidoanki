@@ -54,4 +54,3 @@ SmallImg[3].onclick = function () {
 SmallImg[4].onclick = function () {
     ProductImg.src = SmallImg[4].src;
 }
-
