@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ hàng</title>
+    <title>shopping cart</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!DOCTYPE html>
     <html lang="en">
@@ -99,23 +99,23 @@
     <body class="p-10 bg-gray-100">
         <div class="bg-white p-6 rounded shadow-md mt-10">
 
-            <h1 class="text-2xl font-bold mb-6 text-gray-700">🛒 Giỏ hàng của bạn</h1>
+            <h1 class="text-2xl font-bold mb-6 text-gray-700">🛒 your shopping cart</h1>
 
             <!-- Danh sách sản phẩm trong giỏ hàng -->
             <div id="cart-items"></div>
 
-            <h2 class="text-xl font-bold mt-6 text-gray-800">Tổng tiền: <span id="total-price"
+            <h2 class="text-xl font-bold mt-6 text-gray-800">total amount: <span id="total-price"
                     class="text-green-600">0</span> $</h2>
 
             <div class="mt-6 flex gap-3">
-                <button id="clear-cart" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Xóa
-                    toàn bộ giỏ hàng</button>
+                <button id="clear-cart" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                    clear entire cart</button>
                 <button id="checkout-btn"
-                    class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Mua hàng</button>
+                    class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">purchase</button>
             </div>
 
             <a href="index.html" class="text-blue-500 block mt-4 flex items-center">
-                ⬅ Quay lại mua hàng
+                ⬅ come back to buy
             </a>
         </div>
 
@@ -153,7 +153,7 @@
                         <!-- Nút xóa -->
                         <div class="col-span-1 text-right">
                             <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600" onclick="removeItem(${index})">
-                                Xóa
+                                erase
                             </button>
                         </div>
                     </div>
